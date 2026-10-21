@@ -294,3 +294,4 @@ To restore a Claude skill:
 - Relative links for custom skills.
 - Reproducible installation of external skills from a manifest.
 - Automatic audit after every update.
+# dotfiles
