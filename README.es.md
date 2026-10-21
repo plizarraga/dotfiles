@@ -36,7 +36,8 @@ Este repositorio guarda mis **skills personalizados** y dos scripts para auditar
 │       ├── hono-project-structure/
 │       ├── nestjs-project-structure/
 │       ├── playwright-cli/
-│       └── react-vite-shadcn-project-structure/
+│       ├── react-vite-shadcn-project-structure/
+│       └── unit-testing-expert/
 ├── scripts/
 │   ├── audit-skills.sh         # Detecta duplicados entre agentes
 │   └── sync-skills.sh          # Deduplica y crea enlaces simbólicos
@@ -84,6 +85,7 @@ Los enlaces simbólicos permiten que todos los agentes usen una única copia:
 | [`nestjs-project-structure`](ai/skills/nestjs-project-structure/SKILL.md) | Organización por funcionalidades de módulos, controladores, servicios y DTOs en NestJS. |
 | [`playwright-cli`](ai/skills/playwright-cli/SKILL.md) | Automatización de navegador y pruebas con Playwright CLI. |
 | [`react-vite-shadcn-project-structure`](ai/skills/react-vite-shadcn-project-structure/SKILL.md) | Organización de apps React + Vite + TypeScript con shadcn/ui. |
+| [`unit-testing-expert`](ai/skills/unit-testing-expert/SKILL.md) | Tests con Vitest/Jest + Testing Library bajo reglas estrictas: AAA, aserciones mínimas y comportamiento visible al usuario. |
 
 ## Usar los skills en proyectos
 
