@@ -191,6 +191,7 @@ Compara los directorios reales (no enlaces) que existen con el mismo nombre en `
 
 - `IDENTICAL`: el contenido coincide y puede deduplicarse.
 - `DIFFERENT`: el contenido difiere y requiere revisión manual.
+- `ERROR`: `diff` no pudo compararlos (por ejemplo, un archivo sin permiso de lectura); su mensaje se muestra arriba.
 
 También compara cada directorio real de `~/.codex/skills/` (la carpeta obsoleta que Codex aún lee) con el mismo skill en `~/.agents/skills/` o, si no existe, en `~/.claude/skills/`. Esos resultados llevan el prefijo `codex/`. `sync-skills.sh` no gestiona esta carpeta: sustituye la copia duplicada por un enlace a mano. Mueve antes la copia; si no, `ln -s` crea el enlace dentro del directorio existente:
 

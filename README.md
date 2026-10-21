@@ -191,6 +191,7 @@ Compares real directories (not links) with the same name in `~/.agents/skills/` 
 
 - `IDENTICAL`: the content matches and can be deduplicated.
 - `DIFFERENT`: the content differs and needs manual review.
+- `ERROR`: `diff` could not compare them (for example, an unreadable file); its message is printed above.
 
 It also compares each real directory in `~/.codex/skills/` (the deprecated folder Codex still reads) with the same skill in `~/.agents/skills/` or, failing that, `~/.claude/skills/`. Those results carry the `codex/` prefix. `sync-skills.sh` does not manage this folder: replace a duplicated copy with a link by hand. Move the copy out first; otherwise `ln -s` creates the link inside the existing directory:
 

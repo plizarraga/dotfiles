@@ -6,6 +6,19 @@ AGENTS="$HOME/.agents/skills"
 CLAUDE="$HOME/.claude/skills"
 CODEX="$HOME/.codex/skills"
 
+# diff exits 0 when identical, 1 when different, and 2 when it cannot compare.
+compare() {
+  local source="$1" target="$2" label="$3" status=0
+
+  diff -rq "$source" "$target" >/dev/null || status=$?
+
+  case "$status" in
+    0) printf "IDENTICAL  %s\n" "$label" ;;
+    1) printf "DIFFERENT  %s\n" "$label" ;;
+    *) printf "ERROR      %s\n" "$label" ;;
+  esac
+}
+
 echo "=== Duplicate Skills Audit ==="
 
 for source in "$AGENTS"/*; do
@@ -16,11 +29,7 @@ for source in "$AGENTS"/*; do
   target="$CLAUDE/$name"
 
   if [ -d "$target" ] && [ ! -L "$target" ]; then
-    if diff -rq "$source" "$target" >/dev/null; then
-      printf "IDENTICAL  %s\n" "$name"
-    else
-      printf "DIFFERENT  %s\n" "$name"
-    fi
+    compare "$source" "$target" "$name"
   fi
 done
 
@@ -34,11 +43,7 @@ for source in "$CODEX"/*; do
   for target in "$AGENTS/$name" "$CLAUDE/$name"; do
     [ -d "$target" ] || continue
 
-    if diff -rq "$source" "$target" >/dev/null; then
-      printf "IDENTICAL  codex/%s\n" "$name"
-    else
-      printf "DIFFERENT  codex/%s\n" "$name"
-    fi
+    compare "$source" "$target" "codex/$name"
     break
   done
 done
