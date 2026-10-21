@@ -192,8 +192,16 @@ Compara los directorios reales (no enlaces) que existen con el mismo nombre en `
 - `IDENTICAL`: el contenido coincide y puede deduplicarse.
 - `DIFFERENT`: el contenido difiere y requiere revisión manual.
 
+También compara cada directorio real de `~/.codex/skills/` (la carpeta obsoleta que Codex aún lee) con el mismo skill en `~/.agents/skills/` o, si no existe, en `~/.claude/skills/`. Esos resultados llevan el prefijo `codex/`. `sync-skills.sh` no gestiona esta carpeta: sustituye la copia duplicada por un enlace a mano. Mueve antes la copia; si no, `ln -s` crea el enlace dentro del directorio existente:
+
+```bash
+mkdir -p ~/dotfiles/backups/skills/codex-manual
+mv ~/.codex/skills/<nombre-skill> ~/dotfiles/backups/skills/codex-manual/
+ln -s ../../.claude/skills/<nombre-skill> ~/.codex/skills/<nombre-skill>
+```
+
 > [!NOTE]
-> `_shared` aparece como `DIFFERENT` de forma esperada: su contenido difiere entre agentes. `sync-skills.sh` ignora cualquier directorio que empiece con `_`.
+> `_shared` y `codex/_shared` aparecen como `DIFFERENT` de forma esperada: su contenido difiere entre agentes. `sync-skills.sh` ignora cualquier directorio que empiece con `_`.
 
 ### Sincronizar
 
@@ -261,7 +269,7 @@ find ~/.agents/skills ~/.claude/skills -type l ! -exec test -e {} \; -print
 
 ### La auditoría sigue mostrando `DIFFERENT`
 
-El script nunca consolida contenido distinto. Compara ambas copias con `diff -r`, decide cuál conservar y deja la otra como enlace. Lo esperado tras sincronizar es que solo quede `DIFFERENT _shared`.
+El script nunca consolida contenido distinto. Compara ambas copias con `diff -r`, decide cuál conservar y deja la otra como enlace. Lo esperado tras sincronizar es que solo queden `DIFFERENT _shared` y `DIFFERENT codex/_shared`.
 
 ## Respaldos y recuperación
 

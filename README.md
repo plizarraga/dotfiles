@@ -192,8 +192,16 @@ Compares real directories (not links) with the same name in `~/.agents/skills/` 
 - `IDENTICAL`: the content matches and can be deduplicated.
 - `DIFFERENT`: the content differs and needs manual review.
 
+It also compares each real directory in `~/.codex/skills/` (the deprecated folder Codex still reads) with the same skill in `~/.agents/skills/` or, failing that, `~/.claude/skills/`. Those results carry the `codex/` prefix. `sync-skills.sh` does not manage this folder: replace a duplicated copy with a link by hand. Move the copy out first; otherwise `ln -s` creates the link inside the existing directory:
+
+```bash
+mkdir -p ~/dotfiles/backups/skills/codex-manual
+mv ~/.codex/skills/<skill-name> ~/dotfiles/backups/skills/codex-manual/
+ln -s ../../.claude/skills/<skill-name> ~/.codex/skills/<skill-name>
+```
+
 > [!NOTE]
-> `_shared` is expected to show as `DIFFERENT`: its content differs between agents. `sync-skills.sh` ignores any directory starting with `_`.
+> `_shared` and `codex/_shared` are expected to show as `DIFFERENT`: their content differs between agents. `sync-skills.sh` ignores any directory starting with `_`.
 
 ### Synchronize
 
@@ -261,7 +269,7 @@ find ~/.agents/skills ~/.claude/skills -type l ! -exec test -e {} \; -print
 
 ### The audit still shows `DIFFERENT`
 
-The script never consolidates differing content. Compare both copies with `diff -r`, decide which one to keep, and turn the other into a link. After synchronizing, only `DIFFERENT _shared` should remain.
+The script never consolidates differing content. Compare both copies with `diff -r`, decide which one to keep, and turn the other into a link. After synchronizing, only `DIFFERENT _shared` and `DIFFERENT codex/_shared` should remain.
 
 ## Backups and recovery
 
