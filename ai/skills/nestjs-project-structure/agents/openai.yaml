@@ -1,0 +1,12 @@
+interface:
+  display_name: NestJS Project Structure
+  short_description: Place NestJS files by domain and scope
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
