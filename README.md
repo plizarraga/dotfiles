@@ -39,7 +39,7 @@ This repository holds my **custom skills** and two scripts to audit and synchron
 │       ├── react-vite-shadcn-project-structure/
 │       └── unit-testing-expert/
 ├── scripts/
-│   ├── audit-skills.sh         # Detects duplicates across agents
+│   ├── audit-skills.sh         # Detects duplicates across agents and plugins
 │   └── sync-skills.sh          # Deduplicates and creates symlinks
 └── backups/
     └── skills/                 # Deduplication backups (ignored by Git)
@@ -203,6 +203,18 @@ ln -s ../../.claude/skills/<skill-name> ~/.codex/skills/<skill-name>
 
 > [!NOTE]
 > `_shared` and `codex/_shared` are expected to show as `DIFFERENT`: their content differs between agents. `sync-skills.sh` ignores any directory starting with `_`.
+
+The `Plugin Skills Audit` section checks the Claude Code plugins enabled in `~/.claude/settings.json`. If a plugin skill has the same name as an entry in `~/.claude/skills/` (link or directory), it is reported as `PLUGIN-DUP`: Claude would load it twice (for example, `wrangler` and `cloudflare:wrangler`). `~/.agents/skills/` does not count, because Claude Code does not read it.
+
+To fix it, remove the link from `~/.claude/skills/` and keep the plugin; Codex and OpenCode keep reading `~/.agents/skills/`:
+
+```bash
+rm ~/.claude/skills/<skill-name>
+rm ~/.codex/skills/<skill-name>   # if it pointed to ~/.claude/skills and is now broken
+```
+
+> [!TIP]
+> A skill package should have a single source per agent. If it ships MCP servers, hooks, or commands, install the plugin in Claude. If it only ships skills and several agents use them, install them with `npx skills` into `~/.agents/skills/`. Your own skills live in `ai/skills/`.
 
 ### Synchronize
 
