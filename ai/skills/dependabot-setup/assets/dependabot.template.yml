@@ -1,0 +1,35 @@
+# Adjust directories, timezone and cooldown to the project.
+# cooldown: Dependabot defaults to 3 days for version updates. Keep this block only if pnpm's
+# minimumReleaseAge is longer than 3 days (minutes -> days, round up); otherwise delete it.
+# Multiple directories? add under groups: monorepo: {group-by: dependency-name}.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: America/Tijuana
+    open-pull-requests-limit: 5
+    cooldown:
+      default-days: 2
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      production-patches-and-minors:
+        dependency-type: production
+        update-types: [minor, patch]
+      development-patches-and-minors:
+        dependency-type: development
+        update-types: [minor, patch]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: America/Tijuana
+    commit-message:
+      prefix: "chore(ci)"
