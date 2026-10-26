@@ -33,10 +33,12 @@ Este repositorio guarda mis **skills personalizados** y dos scripts para auditar
 ├── ai/
 │   └── skills/                 # Skills personalizados (versionados)
 │       ├── angular-project-structure/
+│       ├── dependabot-setup/
 │       ├── hono-project-structure/
 │       ├── nestjs-project-structure/
 │       ├── playwright-cli/
 │       ├── react-vite-shadcn-project-structure/
+│       ├── typescript-documentation/
 │       └── unit-testing-expert/
 ├── scripts/
 │   ├── audit-skills.sh         # Detecta duplicados entre agentes y plugins
@@ -81,10 +83,12 @@ Los enlaces simbólicos permiten que todos los agentes usen una única copia:
 | Skill | Propósito |
 | --- | --- |
 | [`angular-project-structure`](ai/skills/angular-project-structure/SKILL.md) | Estructura Angular por funcionalidades, con límites `ui`, `data-access` y `utils`. |
+| [`dependabot-setup`](ai/skills/dependabot-setup/SKILL.md) | Instala, audita y repara Dependabot en un repo: `dependabot.yml`, agrupación, cooldown, conflictos de lockfile y orden de merge de PRs. |
 | [`hono-project-structure`](ai/skills/hono-project-structure/SKILL.md) | Ubicación de archivos en apps Hono para Workers, Node.js, Bun y Deno. |
 | [`nestjs-project-structure`](ai/skills/nestjs-project-structure/SKILL.md) | Organización por funcionalidades de módulos, controladores, servicios y DTOs en NestJS. |
 | [`playwright-cli`](ai/skills/playwright-cli/SKILL.md) | Automatización de navegador y pruebas con Playwright CLI. |
 | [`react-vite-shadcn-project-structure`](ai/skills/react-vite-shadcn-project-structure/SKILL.md) | Organización de apps React + Vite + TypeScript con shadcn/ui. |
+| [`typescript-documentation`](ai/skills/typescript-documentation/SKILL.md) | Comentarios TSDoc/JSDoc concisos y precisos, en inglés, para funciones, clases, tipos y APIs públicas de TypeScript. |
 | [`unit-testing-expert`](ai/skills/unit-testing-expert/SKILL.md) | Tests con Vitest/Jest + Testing Library bajo reglas estrictas: AAA, aserciones mínimas y comportamiento visible al usuario. |
 
 ## Usar los skills en proyectos
