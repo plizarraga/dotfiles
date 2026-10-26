@@ -38,6 +38,7 @@ This repository holds my **custom skills** and two scripts to audit and synchron
 │       ├── nestjs-project-structure/
 │       ├── playwright-cli/
 │       ├── react-vite-shadcn-project-structure/
+│       ├── typescript-documentation/
 │       └── unit-testing-expert/
 ├── scripts/
 │   ├── audit-skills.sh         # Detects duplicates across agents and plugins
@@ -87,6 +88,7 @@ Symbolic links let every agent use a single copy:
 | [`nestjs-project-structure`](ai/skills/nestjs-project-structure/SKILL.md) | Feature-first organization of NestJS modules, controllers, services, and DTOs. |
 | [`playwright-cli`](ai/skills/playwright-cli/SKILL.md) | Browser automation and testing with Playwright CLI. |
 | [`react-vite-shadcn-project-structure`](ai/skills/react-vite-shadcn-project-structure/SKILL.md) | Organization of React + Vite + TypeScript apps with shadcn/ui. |
+| [`typescript-documentation`](ai/skills/typescript-documentation/SKILL.md) | Concise, accurate English TSDoc/JSDoc comments for TypeScript functions, classes, types, and public APIs. |
 | [`unit-testing-expert`](ai/skills/unit-testing-expert/SKILL.md) | Vitest/Jest + Testing Library tests with strict rules: AAA, minimal assertions, user-facing behavior. |
 
 ## Using skills in projects
