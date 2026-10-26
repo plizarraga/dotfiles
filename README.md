@@ -33,6 +33,7 @@ This repository holds my **custom skills** and two scripts to audit and synchron
 ├── ai/
 │   └── skills/                 # Custom skills (versioned)
 │       ├── angular-project-structure/
+│       ├── dependabot-setup/
 │       ├── hono-project-structure/
 │       ├── nestjs-project-structure/
 │       ├── playwright-cli/
@@ -81,6 +82,7 @@ Symbolic links let every agent use a single copy:
 | Skill | Purpose |
 | --- | --- |
 | [`angular-project-structure`](ai/skills/angular-project-structure/SKILL.md) | Feature-first Angular structure with `ui`, `data-access`, and `utils` boundaries. |
+| [`dependabot-setup`](ai/skills/dependabot-setup/SKILL.md) | Install, audit, and fix Dependabot in a repo: `dependabot.yml`, grouping, cooldown, lockfile conflicts, and PR merge order. |
 | [`hono-project-structure`](ai/skills/hono-project-structure/SKILL.md) | File placement for Hono apps on Workers, Node.js, Bun, and Deno. |
 | [`nestjs-project-structure`](ai/skills/nestjs-project-structure/SKILL.md) | Feature-first organization of NestJS modules, controllers, services, and DTOs. |
 | [`playwright-cli`](ai/skills/playwright-cli/SKILL.md) | Browser automation and testing with Playwright CLI. |
