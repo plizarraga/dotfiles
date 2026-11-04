@@ -116,9 +116,11 @@ Response:
 
 ## Configuration
 
+[`<settings example file>`](<path>) documents every variable; the Quick Start needs `<VARIABLE>` and `<VARIABLE>`.
+
 | Variable | Required | Description |
 | --- | --- | --- |
-| `<NAME>` | Yes | <what it controls> |
+| `<NAME>` | Yes | <a setting no file documents> |
 
 ## Testing
 

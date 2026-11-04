@@ -10,7 +10,7 @@ Every README has these.
 | --- | --- |
 | Title and pitch | Project name, then one or two sentences: what it does, for whom, and the problem it solves. The project's logo above the name when one is tracked (an app icon is not a logo). |
 | Quick Start | **Prerequisites** (runtime and package manager with versions, accounts, API keys, repo access when private), then numbered steps that fit this project: clone, install, configure, every setup assumption from the inventory (migrations, a first user, the required clone location), run. End with the URL or output that proves it works. |
-| Usage | The smallest real example of the main job: a command and its output, a code snippet and its result, or the first screen. Output comes from running a read-only command; nondeterministic output (model replies) is labeled as an example. For a template, the main job is starting a new project from it. |
+| Usage | The smallest real example of the main job: a command and its output, a code snippet and its result, or the first screen. Output comes from running a read-only command; nondeterministic output (model replies) is labeled as an example. For a template, the main job is starting a new project from it; when no doc gives those steps, write one line and a TODO instead of composing them. |
 
 ## Conditional sections
 
@@ -19,7 +19,7 @@ Include a section when the inventory meets its trigger.
 | Section | Trigger |
 | --- | --- |
 | Badges | A CI workflow, a published package, or a license exists |
-| Screenshot or demo | The project has a UI or terminal output worth seeing. Without a tracked image, leave a TODO naming what to capture. |
+| Screenshot or demo | The project has a UI or terminal output worth seeing. Without a tracked image, leave a TODO naming what to capture and the repo's capture script, if any. |
 | Navigation | More than six `##` sections: one line of anchor links under the pitch |
 | Features | Three or more distinct capabilities |
 | Tech stack | Three or more tools a contributor must know to work on it |
@@ -44,14 +44,14 @@ Include a section when the inventory meets its trigger.
 - **Features**: three to seven bullets, each a bold label and its benefit.
 - **Tech stack**: group by role (runtime, framework, database, auth, hosting) in a table or a short list.
 - **Repository structure**: a `text` block with a tree as deep as the layout the reader must learn (usually two levels), `<name>/` for a repeated entry, a `#` comment beside each entry, and only the entries the reader needs.
-- **Architecture**: one paragraph per component on what it owns, plus one row per data store (database, bucket, queue) with its purpose and a link to its schema. Add a Mermaid diagram when there are four or more components and the repo has no diagram yet.
+- **Architecture**: one paragraph per component on what it owns, plus one row per data store (database, bucket, queue) with its purpose and a link to its schema. Add a Mermaid diagram when there are four or more components and the repo has no diagram yet (an ASCII one counts).
 - **API**: a table per area with `Method`, `Path`, and `Description`, then one request followed by its response, so the reader sees the output before trying it. With many endpoints, group them by prefix, list the ones a newcomer calls first, and link the routes for the rest. For a library, the main exports with signatures and a link to the full reference.
-- **Configuration**: one table per settings file (secrets and plain vars apart when the platform splits them) with `Variable`, `Required`, and `Description`. Add `Default` only for real defaults, never example values; when a requirement depends on the environment, say which.
+- **Configuration**: link each settings file and name the settings the Quick Start needs. A commented example file is the reference for the rest. Write a table (`Variable`, `Required`, `Description`) only for settings no file documents; add `Default` only for real defaults, never example values, and say which environment a requirement applies to when it varies.
 - **Testing**: the command for each suite and what it needs (a database, a running server, real API keys).
 - **CI**: the badge plus one line on what runs and when, linking the workflow file.
 - **Deployment**: a table with `Component`, `Platform`, and `Notes` (secrets to set, the deploy command), plus a link to the runbook when one exists.
 - **Troubleshooting**: the symptom or exact error message as the bullet, the fix underneath.
-- **Documentation**: the main docs as a list, each with one line on when to read it.
+- **Documentation**: the main docs as a list or table, each with one line on when to read it.
 
 ## Format rules
 

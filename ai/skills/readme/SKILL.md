@@ -15,7 +15,7 @@ Two bars define a finished README:
 Three modes share the steps below:
 
 - **Create**: no README yet. Run all five steps.
-- **Update**: a README exists. Run all five. In step 1, also check every claim the existing README makes (paths, trees, values, flows, commands) against the code: stale claims are the main job. Keep the README's language, the author's conventions (nav line, bullet style), and sections outside the catalog that answer a reader's question; change them only when they fail a check.
+- **Update**: a README exists. Run all five. In step 1, also check every claim the existing README makes (paths, trees, values, flows, commands) against the code: stale claims are the main job. Keep the README's language, the author's conventions (section order, nav line, bullet style), and sections outside the catalog that answer a reader's question; change them only when they fail a check.
 - **Audit**: review only. Run steps 1, 2, and 4 with the existing README as the draft, and check it against the format rules in `references/sections.md`. Write nothing; report gaps, failed checks, and sections present without a trigger.
 
 ## 1. Inventory
@@ -23,8 +23,9 @@ Three modes share the steps below:
 Read the repo and record each fact the README could state, with the path it came from. Write nothing yet.
 
 - **Project type**: app/service, library, CLI, template/starter, monorepo, config or content collection (dotfiles, skills, docs). Often more than one.
-- **Purpose and audience**: from the existing README, the manifest's `description`, `docs/`, a PRD.
-- **Stack and versions**: manifests (`package.json`, `pyproject.toml`, `go.mod`, `Cargo.toml`, …) and version pins (`engines`, `packageManager`, `.nvmrc`, `.tool-versions`, CI setup steps).
+- **Purpose**: from the existing README, the manifest's `description`, `docs/`, a PRD.
+- **Readers**: strangers (a public repo), the team, agents (an `AGENTS.md` or `CLAUDE.md` exists). When `docs/` or `AGENTS.md` already carry the detail, the README stays a map: one line per topic and a link.
+- **Stack and versions**: manifests (`package.json`, `pyproject.toml`, `go.mod`, `Cargo.toml`, …) and version pins (`engines`, `packageManager`, `.nvmrc`, `.tool-versions`, CI setup steps), plus the `engines` floors of key dependencies (the package manager, the test runner).
 - **Entry points**: `package.json` scripts, `Makefile`, `justfile`, `Taskfile.yml`, `scripts/`, `bin/`.
 - **Settings**: every file that defines what the reader provides or may change: `.env.example`, `.dev.vars.example`, platform config vars, a typed env schema.
 - **Setup assumptions**: what the code expects of the reader's machine and first run: hardcoded paths (where the repo must live), directories or tools that must exist, migrations, a first user, what the first screen or command demands (login, seeded data). Read the setup scripts and the first route or command a newcomer hits.
@@ -41,7 +42,7 @@ Done when every fact you plan to state has a source, and every setup assumption 
 
 Read [`references/sections.md`](references/sections.md). Take every core section, then each conditional section whose trigger the inventory meets.
 
-Done when every core section is present and every other section names the inventory fact that earned it.
+Done when every core section is present, every other section names the inventory fact that earned it, and every triggered section you leave out has its reason for the report.
 
 ## 3. Draft
 
@@ -52,13 +53,13 @@ Start from [`assets/README.template.md`](assets/README.template.md): it fixes th
 Check the draft claim by claim against the inventory:
 
 - [ ] Every repo command matches an entry point by name; every standard tool command (`git`, `cp`, the package manager, a platform CLI) matches its docs; every path inside a command matches where the Quick Start puts things.
-- [ ] Every setting in a settings file appears in Configuration, and every row in Configuration exists in a settings file.
+- [ ] Every setting the README names exists in a settings file, and every setting needed to reach the end state is named in the Quick Start.
 - [ ] Ports, URLs, and versions agree across the Quick Start, the config, and every table.
-- [ ] Every relative link and image resolves to a tracked file (`git ls-files`), not only a file on disk.
+- [ ] Every relative link and image resolves to a tracked file or directory (`git ls-files`), and every anchor matches a heading.
 - [ ] Every badge reflects real state (a workflow, a published version, a license).
 - [ ] Example values are placeholders; no token, key, ID, or real credential appears.
 - [ ] Translation twins carry the same commands, links, and sections.
-- [ ] Ten-minute test. Execute the Quick Start in a scratch checkout (the repo's own worktree command when it has one) only when install is cheap, needs no paid keys, and writes nothing outside the checkout (home directory, global installs). Otherwise walk it on paper: each step's inputs come from a prerequisite or an earlier step, and every setup assumption is met before the end state.
+- [ ] Ten-minute test. Execute the Quick Start in a scratch checkout (the repo's own worktree command when it has one) only when install is cheap, needs no paid keys, and leaves no lasting state outside the checkout (user config, global installs, real services); redirect tool caches and logs into the checkout when the tool allows it. Skip a step that would overwrite state the checkout already has (copied secrets) and say so. Otherwise walk it on paper: each step's inputs come from a prerequisite or an earlier step, and every setup assumption is met before the end state.
 
 Done when every box is checked or marked n/a (its subject does not exist in this repo). Fix a failing check in the draft. A claim you could not confirm stays as `<!-- TODO: <what to confirm> -->` at that spot.
 
