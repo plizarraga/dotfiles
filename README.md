@@ -38,7 +38,6 @@ This repository holds my **custom skills** and two scripts to audit and synchron
 │       ├── dependabot-setup/
 │       ├── hono-project-structure/
 │       ├── nestjs-project-structure/
-│       ├── playwright-cli/
 │       ├── react-vite-shadcn-project-structure/
 │       ├── readme/
 │       ├── typescript-documentation/
@@ -91,7 +90,6 @@ Symbolic links let every agent use a single copy:
 | [`dependabot-setup`](ai/skills/dependabot-setup/SKILL.md) | Install, audit, and fix Dependabot in a repo: `dependabot.yml`, grouping, cooldown, lockfile conflicts, and PR merge order. |
 | [`hono-project-structure`](ai/skills/hono-project-structure/SKILL.md) | File placement for Hono apps on Workers, Node.js, Bun, and Deno. |
 | [`nestjs-project-structure`](ai/skills/nestjs-project-structure/SKILL.md) | Feature-first organization of NestJS modules, controllers, services, and DTOs. |
-| [`playwright-cli`](ai/skills/playwright-cli/SKILL.md) | Browser automation and testing with Playwright CLI. |
 | [`react-vite-shadcn-project-structure`](ai/skills/react-vite-shadcn-project-structure/SKILL.md) | Organization of React + Vite + TypeScript apps with shadcn/ui. |
 | [`readme`](ai/skills/readme/SKILL.md) | Create, update, or audit a project README: sections chosen from evidence in the repo, every command and variable verified, and a ten-minute Quick Start test. |
 | [`typescript-documentation`](ai/skills/typescript-documentation/SKILL.md) | Concise, accurate English TSDoc/JSDoc comments for TypeScript functions, classes, types, and public APIs. |
