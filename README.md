@@ -33,6 +33,7 @@ This repository holds my **custom skills** and two scripts to audit and synchron
 ├── ai/
 │   └── skills/                 # Custom skills (versioned)
 │       ├── angular-project-structure/
+│       ├── astro-project-structure/
 │       ├── cv-optimizer/
 │       ├── dependabot-setup/
 │       ├── hono-project-structure/
@@ -85,6 +86,7 @@ Symbolic links let every agent use a single copy:
 | Skill | Purpose |
 | --- | --- |
 | [`angular-project-structure`](ai/skills/angular-project-structure/SKILL.md) | Feature-first Angular structure with `ui`, `data-access`, and `utils` boundaries. |
+| [`astro-project-structure`](ai/skills/astro-project-structure/SKILL.md) | File placement for Astro sites (landing pages, blogs, content sites): pages, layouts, component layers, content collections, `lib`, actions, assets, and SEO files. |
 | [`cv-optimizer`](ai/skills/cv-optimizer/SKILL.md) | Tailor a CV to a job description for ATS: keyword match and score, gaps, and CV writing rules, using only what the source CV supports. |
 | [`dependabot-setup`](ai/skills/dependabot-setup/SKILL.md) | Install, audit, and fix Dependabot in a repo: `dependabot.yml`, grouping, cooldown, lockfile conflicts, and PR merge order. |
 | [`hono-project-structure`](ai/skills/hono-project-structure/SKILL.md) | File placement for Hono apps on Workers, Node.js, Bun, and Deno. |

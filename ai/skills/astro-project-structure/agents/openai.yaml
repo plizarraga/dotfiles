@@ -1,0 +1,12 @@
+interface:
+  display_name: "Astro Project Structure"
+  short_description: "Place Astro project files consistently"
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
