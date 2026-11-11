@@ -123,7 +123,7 @@ lib/
 ## Assets and static files
 
 - `src/assets/<domain>/`: images rendered through `<Image />` or `<Picture />`, so Astro optimizes them. Generic images go in `src/assets/` root.
-- `public/`: files that need a fixed URL and no processing: `favicon.svg`, `og.png`, PDFs, `_headers`, verification files.
+- `public/`: files that need a fixed URL and no processing: `favicon.svg` with its `favicon.ico` and `apple-touch-icon.png` fallbacks, `og.png`, PDFs, `_headers`, verification files.
 
 ## Styles
 
