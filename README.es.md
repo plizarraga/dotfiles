@@ -38,6 +38,7 @@ Este repositorio guarda mis **skills personalizados** y dos scripts para auditar
 │       ├── dependabot-setup/
 │       ├── hono-project-structure/
 │       ├── nestjs-project-structure/
+│       ├── new-job-application/
 │       ├── react-vite-shadcn-project-structure/
 │       ├── readme/
 │       ├── typescript-documentation/
@@ -90,6 +91,7 @@ Los enlaces simbólicos permiten que todos los agentes usen una única copia:
 | [`dependabot-setup`](ai/skills/dependabot-setup/SKILL.md) | Instala, audita y repara Dependabot en un repo: `dependabot.yml`, agrupación, cooldown, conflictos de lockfile y orden de merge de PRs. |
 | [`hono-project-structure`](ai/skills/hono-project-structure/SKILL.md) | Ubicación de archivos en apps Hono para Workers, Node.js, Bun y Deno. |
 | [`nestjs-project-structure`](ai/skills/nestjs-project-structure/SKILL.md) | Organización por funcionalidades de módulos, controladores, servicios y DTOs en NestJS. |
+| [`new-job-application`](ai/skills/new-job-application/SKILL.md) | Convierte un job description pegado en una carpeta de aplicación completa del repo career: compatibilidad, CV, introducción y mock interview, siguiendo el workflow de ese repo. |
 | [`react-vite-shadcn-project-structure`](ai/skills/react-vite-shadcn-project-structure/SKILL.md) | Organización de apps React + Vite + TypeScript con shadcn/ui. |
 | [`readme`](ai/skills/readme/SKILL.md) | Crea, actualiza o audita el README de un proyecto: secciones elegidas según lo que hay en el repo, cada comando y variable verificados, y la prueba de Quick Start en diez minutos. |
 | [`typescript-documentation`](ai/skills/typescript-documentation/SKILL.md) | Comentarios TSDoc/JSDoc concisos y precisos, en inglés, para funciones, clases, tipos y APIs públicas de TypeScript. |
